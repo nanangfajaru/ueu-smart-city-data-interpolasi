@@ -143,3 +143,18 @@ tr.group td { background: #f1f5f3; font-weight: 700; color: var(--ink-2); text-a
 .fill { height: 18px; border-radius: 0 4px 4px 0; min-width: 2px; }
 .track .v { font-size: 13px; font-weight: 600; font-variant-numeric: tabular-nums; white-space: nowrap; }
 .verdict { margin: 12px 0 0; font-size: 13px; padding-top: 10px; border-top: 1px solid var(--line); display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+
+/* program links */
+.prog { display: flex; flex-direction: column; }
+.prog ul { margin-bottom: 18px; }
+.cta { display: inline-flex; align-items: center; gap: 8px; align-self: flex-start; margin-top: auto;
+  background: var(--accent); color: #111; font-weight: 700; font-size: 16px; text-decoration: none;
+  padding: 12px 20px; border-radius: 12px; box-shadow: 0 4px 0 rgba(0,0,0,.18); transition: transform .12s, box-shadow .12s; }
+.cta:hover { transform: translateY(-2px); box-shadow: 0 6px 0 rgba(0,0,0,.18); }
+.cta:active { transform: translateY(1px); box-shadow: 0 2px 0 rgba(0,0,0,.18); }
+.cta:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
+.cta span { font-size: 18px; }
+.hero-cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 22px; }
+.hero-cta .cta { flex-direction: column; align-items: flex-start; gap: 0; line-height: 1.25; }
+.hero-cta .cta small { font-size: 11px; font-weight: 600; letter-spacing: .05em; text-transform: uppercase; opacity: .75; }
+.hero-cta .cta.ghost { background: #fff; color: var(--brand); }
