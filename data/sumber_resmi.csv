@@ -1,0 +1,41 @@
+indikator,wilayah,tahun,nilai,satuan,sumber,url
+tpt,Kabupaten Bekasi,2020,11.54,persen,Dashboard Statistik Jabar (API BPS),https://statistik.jabarprov.go.id/dashboard/pengangguran
+tpt,Kabupaten Bekasi,2021,10.09,persen,Dashboard Statistik Jabar (API BPS),https://statistik.jabarprov.go.id/dashboard/pengangguran
+tpt,Kabupaten Bekasi,2022,10.31,persen,Dashboard Statistik Jabar (API BPS),https://statistik.jabarprov.go.id/dashboard/pengangguran
+tpt,Kabupaten Bekasi,2023,8.87,persen,Dashboard Statistik Jabar (API BPS),https://statistik.jabarprov.go.id/dashboard/pengangguran
+tpt,Kabupaten Bekasi,2024,8.82,persen,Dashboard Statistik Jabar (API BPS),https://statistik.jabarprov.go.id/dashboard/pengangguran
+tpt,Kabupaten Bekasi,2025,8.78,persen,BPS Jabar Agustus 2025 via IDN Times,https://jabar.idntimes.com/news/jawa-barat/anomali-industri-di-bekasi-pabrik-banyak-warga-sulit-dapat-kerja-00-nqtvm-nm8ccf
+tpt,Jawa Barat,2025,6.77,persen,BPS Provinsi Jawa Barat,https://jabar.bps.go.id/en/pressrelease/2025/11/05/1242/tingkat-pengangguran-terbuka--tpt--agustus-2025-di-jawa-barat-sebesar-6-77-persen.html
+tpt,Indonesia,2020,7.07,persen,BPS (Sakernas Agustus) via GoodStats,https://data.goodstats.id/statistic/tingkat-pengangguran-terbuka-di-indonesia-alami-penurunan-pada-2024-WjMTQ
+tpt,Indonesia,2021,6.49,persen,BPS (Sakernas Agustus) via GoodStats,https://data.goodstats.id/statistic/tingkat-pengangguran-terbuka-di-indonesia-alami-penurunan-pada-2024-WjMTQ
+tpt,Indonesia,2022,5.86,persen,BPS (Sakernas Agustus) via GoodStats,https://data.goodstats.id/statistic/tingkat-pengangguran-terbuka-di-indonesia-alami-penurunan-pada-2024-WjMTQ
+tpt,Indonesia,2023,5.32,persen,BPS (Sakernas Agustus) via GoodStats,https://data.goodstats.id/statistic/tingkat-pengangguran-terbuka-di-indonesia-alami-penurunan-pada-2024-WjMTQ
+tpt,Indonesia,2024,4.91,persen,BPS (Sakernas Agustus) via GoodStats,https://data.goodstats.id/statistic/tingkat-pengangguran-terbuka-di-indonesia-alami-penurunan-pada-2024-WjMTQ
+tpt,Indonesia,2025,4.85,persen,BPS Agustus 2025 via Bisnis.com,https://ekonomi.bisnis.com/read/20251105/12/1926326/tingkat-pengangguran-terbuka-tpt-naik-agustus-2025-sentuh-485
+miskin,Kabupaten Bekasi,2021,5.21,persen,Dashboard Statistik Jabar (API BPS),https://statistik.jabarprov.go.id/dashboard/kemiskinan
+miskin,Kabupaten Bekasi,2022,5.01,persen,Dashboard Statistik Jabar (API BPS),https://statistik.jabarprov.go.id/dashboard/kemiskinan
+miskin,Kabupaten Bekasi,2023,4.93,persen,Dashboard Statistik Jabar (API BPS),https://statistik.jabarprov.go.id/dashboard/kemiskinan
+miskin,Kabupaten Bekasi,2024,4.80,persen,Dashboard Statistik Jabar (API BPS),https://statistik.jabarprov.go.id/dashboard/kemiskinan
+miskin,Kabupaten Bekasi,2025,4.36,persen,Dashboard Statistik Jabar (API BPS),https://statistik.jabarprov.go.id/dashboard/kemiskinan
+miskin,Jawa Barat,2025,7.02,persen,BPS Provinsi Jawa Barat (Maret 2025),https://jabar.bps.go.id/en/pressrelease/2025/07/25/1251/persentase-penduduk-miskin-di-jawa-barat-maret-2025-turun-menjadi-7-02-persen-.html
+miskin,Indonesia,2024,9.03,persen,BPS (Maret 2024),https://www.bps.go.id/id/pressrelease/2025/07/25/2518/persentase-penduduk-miskin-maret-2025turun-menjadi-8-47-persen-.html
+miskin,Indonesia,2025,8.47,persen,BPS (Maret 2025),https://www.bps.go.id/id/pressrelease/2025/07/25/2518/persentase-penduduk-miskin-maret-2025turun-menjadi-8-47-persen-.html
+kontribusi_umkm_pdrb,Kabupaten Bekasi,2016,11.99,persen PDRB,BPS Kab. Bekasi 2021 via Jurnal JBK Politeknik Negeri Bali,https://ojs2.pnb.ac.id/index.php/JBK/article/download/1988/1125/20862
+kontribusi_umkm_pdrb,Kabupaten Bekasi,2020,13.77,persen PDRB,BPS Kab. Bekasi 2021 via Jurnal JBK Politeknik Negeri Bali,https://ojs2.pnb.ac.id/index.php/JBK/article/download/1988/1125/20862
+kontribusi_umkm_pdb,Indonesia,2024,61,persen PDB,Kemenko Perekonomian via Kontan,https://nasional.kontan.co.id/news/menko-ekonomi-umkm-menyumbang-61-pdb-nasional
+umkm_tercatat,Kabupaten Bekasi,2022,20610,unit,Jurnal JAR Universitas Teknologi Yogyakarta,https://journal.uty.ac.id/index.php/JAR/article/download/536/296/
+umkm_tercatat,Kabupaten Bekasi,2023,19111,unit,Jurnal JAR Universitas Teknologi Yogyakarta,https://journal.uty.ac.id/index.php/JAR/article/download/536/296/
+umkm_total,Indonesia,2021,65460000,unit,Kemenkop UKM via Repositori Telkom University,https://repository.telkomuniversity.ac.id/pustaka/files/203020/bab1/ketahanan-wirausaha-dan-efikasi-diri-selama-masa-pandemi-covid-19-studi-kasus-usaha-mikro-sektor-kuliner-di-kota-bekasi-.pdf
+penduduk,Kabupaten Bekasi,2024,3273868,jiwa,RLPPD Kabupaten Bekasi 2024 (data BPS),https://bekasikab.go.id/jelajahbekasi/attach/file-content/12202530030726-88f798d8cb1f0f4783f2a18ed3d3a28e.pdf
+penduduk,Indonesia,2024,281603800,jiwa,BPS Proyeksi Penduduk 2024,https://www.bps.go.id
+pertumbuhan_ekonomi,Kabupaten Bekasi,2024,5.17,persen,RLPPD Kabupaten Bekasi 2024 (data BPS),https://bekasikab.go.id/jelajahbekasi/attach/file-content/12202530030726-88f798d8cb1f0f4783f2a18ed3d3a28e.pdf
+pertumbuhan_ekonomi,Indonesia,2024,5.03,persen,BPS,https://www.bps.go.id/pressrelease/2025/02/05/2408/ekonomi-indonesia-tahun-2024-tumbuh-5-03-persen--c-to-c---ekonomi-indonesia-triwulan-iv-2024-tumbuh-5-02-persen--y-on-y---ekonomi-indonesia-triwulan-iv-2024-tumbuh-0-53-persen--q-to-q--.html
+pertumbuhan_industri,Kabupaten Bekasi,2023,5.88,persen,RLPPD Kabupaten Bekasi 2024 (data BPS),https://bekasikab.go.id/jelajahbekasi/attach/file-content/12202530030726-88f798d8cb1f0f4783f2a18ed3d3a28e.pdf
+pertumbuhan_industri,Kabupaten Bekasi,2024,4.93,persen,RLPPD Kabupaten Bekasi 2024 (data BPS),https://bekasikab.go.id/jelajahbekasi/attach/file-content/12202530030726-88f798d8cb1f0f4783f2a18ed3d3a28e.pdf
+gini,Kabupaten Bekasi,2023,0.397,indeks,RLPPD Kabupaten Bekasi 2024 (data BPS),https://bekasikab.go.id/jelajahbekasi/attach/file-content/12202530030726-88f798d8cb1f0f4783f2a18ed3d3a28e.pdf
+gini,Kabupaten Bekasi,2024,0.367,indeks,RLPPD Kabupaten Bekasi 2024 (data BPS),https://bekasikab.go.id/jelajahbekasi/attach/file-content/12202530030726-88f798d8cb1f0f4783f2a18ed3d3a28e.pdf
+gini,Indonesia,2025,0.375,indeks,BPS (Maret 2025),https://www.bps.go.id/en/pressrelease/2025/07/25/2519/the-gini-ratio-in-march-2025-was-0-375.html
+pdrb_per_kapita,Kabupaten Bekasi,2024,128.69,juta rupiah,RLPPD Kabupaten Bekasi 2024 (data BPS),https://bekasikab.go.id/jelajahbekasi/attach/file-content/12202530030726-88f798d8cb1f0f4783f2a18ed3d3a28e.pdf
+pdrb_per_kapita,Indonesia,2024,78.62,juta rupiah,BPS via Bisnis.com,https://ekonomi.bisnis.com/read/20250205/9/1837016/pdb-per-kapita-indonesia-2024-capai-rp7862-juta
+angkatan_kerja,Kabupaten Bekasi,2024,1620000,orang,RLPPD Kabupaten Bekasi 2024 (data BPS),https://bekasikab.go.id/jelajahbekasi/attach/file-content/12202530030726-88f798d8cb1f0f4783f2a18ed3d3a28e.pdf
+penganggur,Kabupaten Bekasi,2025,145620,orang,BPS Jabar Agustus 2025 via IDN Times,https://jabar.idntimes.com/news/jawa-barat/anomali-industri-di-bekasi-pabrik-banyak-warga-sulit-dapat-kerja-00-nqtvm-nm8ccf

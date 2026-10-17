@@ -1,0 +1,360 @@
+{
+  "metode": "Interpolasi & proyeksi data Smart Economy UMKM Kabupaten Bekasi.\n\nJalankan:  python3 scripts/interpolasi.py\nInput   :  data/sumber_resmi.csv   (fakta dari sumber resmi)\nOutput  :  data/hasil.json          (dibaca oleh index.html)\n\nMetode\n------\n1. Interpolasi linear  : mengisi tahun yang kosong DI ANTARA dua data resmi.\n       y(t) = y0 + (y1 - y0) * (t - t0) / (t1 - t0)\n2. Proyeksi (ekstrapolasi) laju tetap : melanjutkan tren SETELAH data resmi terakhir.\n       y(t) = y_akhir * (1 + r) ** (t - t_akhir),   r = (y_akhir / y_awal) ** (1 / n) - 1\n   Laju persentase dipakai (bukan garis lurus) agar angka persen tidak jatuh di bawah nol.\n3. Status   : angka Bekasi dibandingkan dengan Jawa Barat dan Nasional.\n4. Gap      : selisih proyeksi \"tanpa kebijakan\" dengan target kebijakan.",
+  "umkm_pdrb": {
+    "seri": [
+      {
+        "tahun": 2016,
+        "nilai": 11.99,
+        "jenis": "resmi"
+      },
+      {
+        "tahun": 2017,
+        "nilai": 12.44,
+        "jenis": "interpolasi"
+      },
+      {
+        "tahun": 2018,
+        "nilai": 12.88,
+        "jenis": "interpolasi"
+      },
+      {
+        "tahun": 2019,
+        "nilai": 13.32,
+        "jenis": "interpolasi"
+      },
+      {
+        "tahun": 2020,
+        "nilai": 13.77,
+        "jenis": "resmi"
+      },
+      {
+        "tahun": 2021,
+        "nilai": 14.21,
+        "jenis": "proyeksi"
+      },
+      {
+        "tahun": 2022,
+        "nilai": 14.66,
+        "jenis": "proyeksi"
+      },
+      {
+        "tahun": 2023,
+        "nilai": 15.1,
+        "jenis": "proyeksi"
+      },
+      {
+        "tahun": 2024,
+        "nilai": 15.55,
+        "jenis": "proyeksi"
+      },
+      {
+        "tahun": 2025,
+        "nilai": 15.99,
+        "jenis": "proyeksi"
+      },
+      {
+        "tahun": 2026,
+        "nilai": 16.44,
+        "jenis": "proyeksi"
+      },
+      {
+        "tahun": 2027,
+        "nilai": 16.88,
+        "jenis": "proyeksi"
+      },
+      {
+        "tahun": 2028,
+        "nilai": 17.33,
+        "jenis": "proyeksi"
+      },
+      {
+        "tahun": 2029,
+        "nilai": 17.77,
+        "jenis": "proyeksi"
+      },
+      {
+        "tahun": 2030,
+        "nilai": 18.22,
+        "jenis": "proyeksi"
+      },
+      {
+        "tahun": 2031,
+        "nilai": 18.66,
+        "jenis": "proyeksi"
+      },
+      {
+        "tahun": 2032,
+        "nilai": 19.11,
+        "jenis": "proyeksi"
+      },
+      {
+        "tahun": 2033,
+        "nilai": 19.55,
+        "jenis": "proyeksi"
+      },
+      {
+        "tahun": 2034,
+        "nilai": 20.0,
+        "jenis": "proyeksi"
+      }
+    ],
+    "kemiringan": 0.445,
+    "titik": [
+      2016,
+      11.99,
+      2020,
+      13.77
+    ],
+    "nasional": 61.0
+  },
+  "tpt": {
+    "tahun": [
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026,
+      2027,
+      2028,
+      2029,
+      2030,
+      2031,
+      2032,
+      2033,
+      2034
+    ],
+    "bekasi_resmi": {
+      "2020": 11.54,
+      "2021": 10.09,
+      "2022": 10.31,
+      "2023": 8.87,
+      "2024": 8.82,
+      "2025": 8.78
+    },
+    "bekasi_tanpa_kebijakan": {
+      "2026": 8.74,
+      "2027": 8.69,
+      "2028": 8.65,
+      "2029": 8.6,
+      "2030": 8.56,
+      "2031": 8.52,
+      "2032": 8.47,
+      "2033": 8.43,
+      "2034": 8.39
+    },
+    "bekasi_target": {
+      "2029": 8.6,
+      "2030": 8.21,
+      "2031": 7.84,
+      "2032": 7.49,
+      "2033": 7.15,
+      "2034": 6.83
+    },
+    "nasional_resmi": {
+      "2020": 7.07,
+      "2021": 6.49,
+      "2022": 5.86,
+      "2023": 5.32,
+      "2024": 4.91,
+      "2025": 4.85
+    },
+    "nasional_proyeksi": {
+      "2026": 4.63,
+      "2027": 4.42,
+      "2028": 4.22,
+      "2029": 4.03,
+      "2030": 3.85,
+      "2031": 3.67,
+      "2032": 3.51,
+      "2033": 3.35,
+      "2034": 3.2
+    },
+    "laju_bekasi": -0.51,
+    "laju_nasional": -4.52,
+    "rasio_2025": 1.81,
+    "rasio_2034_tanpa": 2.62,
+    "angkatan_kerja_2034": 1890000.0,
+    "penganggur_2034_tanpa": 158500.0,
+    "penganggur_2034_target": 129000.0,
+    "gap_orang": 29500.0,
+    "penganggur_2025": 145620.0
+  },
+  "miskin": {
+    "bekasi_resmi": {
+      "2021": 5.21,
+      "2022": 5.01,
+      "2023": 4.93,
+      "2024": 4.8,
+      "2025": 4.36
+    },
+    "bekasi_proyeksi": {
+      "2026": 4.1,
+      "2027": 3.86,
+      "2028": 3.63,
+      "2029": 3.41,
+      "2030": 3.21,
+      "2031": 3.02,
+      "2032": 2.84,
+      "2033": 2.67,
+      "2034": 2.51
+    },
+    "laju": -5.96
+  },
+  "umkm_cakupan": {
+    "estimasi": 761000.0,
+    "tercatat": 19111.0,
+    "persen_tercatat": 2.51,
+    "proporsi_penduduk": 1.16,
+    "target_2034": 100000,
+    "persen_target_2034": 13.14
+  },
+  "fakta": [
+    {
+      "id": "tpt",
+      "judul": "Pengangguran terbuka",
+      "nilai": "8,78%",
+      "tahun": 2025,
+      "sumber": {
+        "nama": "BPS Jabar Agustus 2025 via IDN Times",
+        "url": "https://jabar.idntimes.com/news/jawa-barat/anomali-industri-di-bekasi-pabrik-banyak-warga-sulit-dapat-kerja-00-nqtvm-nm8ccf"
+      },
+      "pembanding": [
+        "Jawa Barat 6,77%",
+        "Nasional 4,85%"
+      ],
+      "status": "kritis",
+      "kesimpulan": "Tertinggi di Jawa Barat dan 1,8× angka nasional. Sejak 2023 Bekasi hanya turun 0,5% per tahun, nasional 4,5% per tahun.",
+      "program": [
+        "Program 1",
+        "Program 2"
+      ]
+    },
+    {
+      "id": "umkm_pdrb",
+      "judul": "Kontribusi UMKM terhadap ekonomi",
+      "nilai": "13,77%",
+      "tahun": 2020,
+      "sumber": {
+        "nama": "BPS Kab. Bekasi 2021 via Jurnal JBK Politeknik Negeri Bali",
+        "url": "https://ojs2.pnb.ac.id/index.php/JBK/article/download/1988/1125/20862"
+      },
+      "pembanding": [
+        "Nasional 61% dari PDB"
+      ],
+      "status": "kritis",
+      "kesimpulan": "Ekonomi Bekasi dikuasai industri besar; porsi UMKM kurang dari seperempat porsi UMKM nasional.",
+      "program": [
+        "Program 2"
+      ]
+    },
+    {
+      "id": "umkm_data",
+      "judul": "UMKM yang tercatat",
+      "nilai": "19.111",
+      "tahun": 2023,
+      "sumber": {
+        "nama": "Jurnal JAR Universitas Teknologi Yogyakarta",
+        "url": "https://journal.uty.ac.id/index.php/JAR/article/download/536/296/"
+      },
+      "pembanding": [
+        "Estimasi potensi ±761.000 usaha"
+      ],
+      "status": "kritis",
+      "kesimpulan": "Hanya sekitar 2,5% dari potensi UMKM yang tercatat. Pemerintah tidak bisa membina usaha yang tidak terdata.",
+      "program": [
+        "Program 1"
+      ]
+    },
+    {
+      "id": "industri",
+      "judul": "Pertumbuhan sektor industri",
+      "nilai": "4,93%",
+      "tahun": 2024,
+      "sumber": {
+        "nama": "RLPPD Kabupaten Bekasi 2024 (data BPS)",
+        "url": "https://bekasikab.go.id/jelajahbekasi/attach/file-content/12202530030726-88f798d8cb1f0f4783f2a18ed3d3a28e.pdf"
+      },
+      "pembanding": [
+        "Tahun sebelumnya 5,88%"
+      ],
+      "status": "waspada",
+      "kesimpulan": "Melambat karena penutupan pabrik besar; pekerja formal turun 38 ribu orang. Warga butuh sumber penghasilan selain pabrik.",
+      "program": [
+        "Program 2"
+      ]
+    },
+    {
+      "id": "gini",
+      "judul": "Ketimpangan (rasio Gini)",
+      "nilai": "0,367",
+      "tahun": 2024,
+      "sumber": {
+        "nama": "RLPPD Kabupaten Bekasi 2024 (data BPS)",
+        "url": "https://bekasikab.go.id/jelajahbekasi/attach/file-content/12202530030726-88f798d8cb1f0f4783f2a18ed3d3a28e.pdf"
+      },
+      "pembanding": [
+        "Nasional 0,375"
+      ],
+      "status": "waspada",
+      "kesimpulan": "Sedikit lebih baik dari nasional, tetapi masih kategori ketimpangan sedang (0,3–0,5) menurut BPS.",
+      "program": [
+        "Program 1"
+      ]
+    },
+    {
+      "id": "kapita",
+      "judul": "PDRB per kapita",
+      "nilai": "Rp128,69 jt",
+      "tahun": 2024,
+      "sumber": {
+        "nama": "RLPPD Kabupaten Bekasi 2024 (data BPS)",
+        "url": "https://bekasikab.go.id/jelajahbekasi/attach/file-content/12202530030726-88f798d8cb1f0f4783f2a18ed3d3a28e.pdf"
+      },
+      "pembanding": [
+        "Nasional Rp78,62 jt"
+      ],
+      "status": "aman",
+      "kesimpulan": "Tinggi karena output pabrik, bukan pendapatan warga. RLPPD 2024 sendiri mencatat banyak warga berdaya beli rendah.",
+      "program": []
+    },
+    {
+      "id": "pe",
+      "judul": "Pertumbuhan ekonomi",
+      "nilai": "5,17%",
+      "tahun": 2024,
+      "sumber": {
+        "nama": "RLPPD Kabupaten Bekasi 2024 (data BPS)",
+        "url": "https://bekasikab.go.id/jelajahbekasi/attach/file-content/12202530030726-88f798d8cb1f0f4783f2a18ed3d3a28e.pdf"
+      },
+      "pembanding": [
+        "Nasional 5,03%"
+      ],
+      "status": "aman",
+      "kesimpulan": "Sedikit di atas nasional. Masalahnya bukan pertumbuhan, tetapi siapa yang menikmatinya.",
+      "program": []
+    },
+    {
+      "id": "miskin",
+      "judul": "Penduduk miskin",
+      "nilai": "4,36%",
+      "tahun": 2025,
+      "sumber": {
+        "nama": "Dashboard Statistik Jabar (API BPS)",
+        "url": "https://statistik.jabarprov.go.id/dashboard/kemiskinan"
+      },
+      "pembanding": [
+        "Jawa Barat 7,02%",
+        "Nasional 8,47%"
+      ],
+      "status": "aman",
+      "kesimpulan": "Jauh lebih baik dari Jawa Barat dan nasional. Masalah utama Bekasi adalah pengangguran, bukan kemiskinan.",
+      "program": []
+    }
+  ],
+  "jabatan": [
+    2029,
+    2034
+  ]
+}
