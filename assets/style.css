@@ -53,7 +53,7 @@ b { font-weight: 600; }
 .hero { background: var(--brand); color: var(--brand-ink); padding: 56px 0 44px; }
 .kicker { font-size: 13px; letter-spacing: .04em; text-transform: uppercase; opacity: .8; margin: 0 0 14px; }
 .hero h1 { font-size: clamp(32px, 6vw, 56px); }
-.lead { max-width: 680px; font-size: 18px; opacity: .92; margin: 18px 0 28px; }
+.lead { max-width: 680px; font-size: 18px; opacity: .92; margin: 16px 0 0; }
 .flow { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 8px; }
 .flow li { background: rgba(255,255,255,.12); border-radius: 999px; padding: 6px 14px 6px 6px; font-size: 14px; display: flex; align-items: center; gap: 8px; }
 .flow span { background: var(--accent); color: #111; width: 24px; height: 24px; border-radius: 50%; display: grid; place-items: center; font-weight: 700; font-size: 13px; }
