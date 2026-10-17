@@ -55,8 +55,10 @@ async function main() {
   // ---------- 1-2. Fakta & status ----------
   const count = { kritis: 0, waspada: 0, aman: 0 };
   h.fakta.forEach((f) => count[f.status]++);
-  id("tally").innerHTML = ["kritis", "waspada", "aman"].map((s) => `${badge(s)} <span class="muted small">${count[s]} indikator</span>`).join("&nbsp;&nbsp;");
-  id("kartu").innerHTML = h.fakta.map((f) => `
+  id("tally").innerHTML = ["aman", "waspada", "kritis"].map((s) => `${badge(s)} <span class="muted small">${count[s]} indikator</span>`).join("&nbsp;&nbsp;");
+  const ORDER = { aman: 0, waspada: 1, kritis: 2 };
+  const faktaUrut = [...h.fakta].sort((a, b) => ORDER[a.status] - ORDER[b.status]);
+  id("kartu").innerHTML = faktaUrut.map((f) => `
     <article class="card ${f.status}">
       <div>${badge(f.status)}</div>
       <h3>${f.judul}</h3>
@@ -72,13 +74,14 @@ async function main() {
   const COL = { "Kab. Bekasi": css("--s1"), "Jawa Barat": css("--s3"), "Nasional": css("--s2") };
   const num = (v, sat) => (sat === "" ? fmt(v, 3) : fmt(v, 2)) + sat;
   id("bars").innerHTML = h.perbandingan.map((p) => {
+    p = { ...p };
     const max = Math.max(...p.data.map((d) => d.nilai));
     const bks = p.data[0].nilai, others = p.data.slice(1).map((d) => d.nilai);
     const lebihBaik = (a, b) => (p.arah === "rendah" ? a < b : a > b);
     const st = p.status || (others.every((o) => lebihBaik(bks, o)) ? "aman" : others.every((o) => !lebihBaik(bks, o)) ? "kritis" : "waspada");
     const kata = { aman: "Bekasi lebih baik dari semua pembanding", kritis: "Bekasi lebih buruk dari semua pembanding", waspada: "Bekasi di antara pembanding" }[st];
     const ket = p.catatan || kata;
-    return `<article class="panel">
+    return { st, html: `<article class="panel">
       <h3>${p.judul}</h3>
       <p class="dir">${p.arah === "rendah" ? "Makin rendah makin baik" : "Makin tinggi makin baik"}</p>
       ${p.data.map((d, i) => `<div class="brow${i === 0 ? " me" : ""}">
@@ -86,8 +89,8 @@ async function main() {
           <div class="track"><div class="fill" style="width:${(d.nilai / max) * 78}%;background:${COL[d.wilayah]}"></div><span class="v">${num(d.nilai, p.satuan)}</span></div>
         </div>`).join("")}
       <p class="verdict">${badge(st)}<span class="muted">${ket}</span></p>
-    </article>`;
-  }).join("");
+    </article>` };
+  }).sort((a, b) => ORDER[a.st] - ORDER[b.st]).map((x) => x.html).join("");
 
   const tr = h.tpt, ty = [2020, 2021, 2022, 2023, 2024, 2025];
   const tb = ty.map((y) => tr.bekasi_resmi[y]), tn = ty.map((y) => tr.nasional_resmi[y]);
@@ -134,11 +137,14 @@ async function main() {
   id("tabTarget").innerHTML = table(["Indikator", "Dasar persentase", "Data awal", ...yr], rows);
 
   // ---------- Sumber ----------
+  const NAMA = { tpt: "pengangguran", miskin: "kemiskinan", kontribusi_umkm_pdrb: "kontribusi UMKM Bekasi", kontribusi_umkm_pdb: "kontribusi UMKM nasional",
+    umkm_tercatat: "UMKM tercatat", umkm_total: "jumlah UMKM nasional", pdrb_per_kapita: "nilai ekonomi per penduduk", pertumbuhan_ekonomi: "pertumbuhan ekonomi",
+    pertumbuhan_industri: "pertumbuhan industri", gini: "rasio Gini", angkatan_kerja: "angkatan kerja", penganggur: "jumlah penganggur", penduduk: "penduduk" };
   const seen = new Map();
   parseCSV(csv).forEach((r) => {
     const k = r.sumber + "|" + r.url;
     if (!seen.has(k)) seen.set(k, { nama: r.sumber, url: r.url, ind: new Set() });
-    seen.get(k).ind.add(r.indikator.replaceAll("_", " "));
+    seen.get(k).ind.add(NAMA[r.indikator] || r.indikator.replaceAll("_", " "));
   });
   const host = (u) => new URL(u).hostname.replace(/^www\./, "");
   id("sources").innerHTML = [...seen.values()].map((s) => `<li><a href="${s.url}" target="_blank" rel="noopener">${s.nama}</a> <span class="muted small">— ${host(s.url)} · ${[...s.ind].join(", ")}</span></li>`).join("");

@@ -241,10 +241,10 @@
         "url": "https://ojs2.pnb.ac.id/index.php/JBK/article/download/1988/1125/20862"
       },
       "pembanding": [
-        "Nasional 61% dari PDB"
+        "Nasional 61% dari total ekonomi"
       ],
       "status": "kritis",
-      "kesimpulan": "Ekonomi Bekasi dikuasai industri besar; porsi UMKM kurang dari seperempat porsi UMKM nasional.",
+      "kesimpulan": "Dari seluruh nilai ekonomi Bekasi, UMKM hanya menyumbang sekitar 14%; sisanya dikuasai industri besar. Secara nasional UMKM menyumbang 61%.",
       "program": [
         "Program 2"
       ]
@@ -305,7 +305,7 @@
     },
     {
       "id": "kapita",
-      "judul": "PDRB per kapita",
+      "judul": "Nilai ekonomi per penduduk",
       "nilai": "Rp128,69 jt",
       "tahun": 2024,
       "sumber": {
@@ -316,7 +316,7 @@
         "Nasional Rp78,62 jt"
       ],
       "status": "aman",
-      "kesimpulan": "Tinggi karena output pabrik, bukan pendapatan warga. RLPPD 2024 sendiri mencatat banyak warga berdaya beli rendah.",
+      "kesimpulan": "Total nilai produksi daerah dibagi jumlah penduduk. Tinggi karena hasil pabrik, bukan pendapatan warga; banyak warga masih berdaya beli rendah.",
       "program": []
     },
     {
@@ -452,10 +452,10 @@
       ]
     },
     {
-      "judul": "PDRB per kapita",
+      "judul": "Nilai ekonomi per penduduk",
       "satuan": " jt",
       "arah": "tinggi",
-      "catatan": "Lebih tinggi dari nasional karena output pabrik, bukan pendapatan warga",
+      "catatan": "Lebih tinggi dari nasional karena hasil pabrik, bukan pendapatan warga",
       "data": [
         {
           "wilayah": "Kab. Bekasi",
