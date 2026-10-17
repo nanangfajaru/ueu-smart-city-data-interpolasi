@@ -67,6 +67,41 @@ async function main() {
       <div class="src">Sumber: <a href="${f.sumber.url}" target="_blank" rel="noopener">${f.sumber.nama}</a></div>
     </article>`).join("");
 
+
+  // ---------- 2. Grafik perbandingan ----------
+  const COL = { "Kab. Bekasi": css("--s1"), "Jawa Barat": css("--s3"), "Nasional": css("--s2") };
+  const num = (v, sat) => (sat === "" ? fmt(v, 3) : fmt(v, 2)) + sat;
+  id("bars").innerHTML = h.perbandingan.map((p) => {
+    const max = Math.max(...p.data.map((d) => d.nilai));
+    const bks = p.data[0].nilai, others = p.data.slice(1).map((d) => d.nilai);
+    const lebihBaik = (a, b) => (p.arah === "rendah" ? a < b : a > b);
+    const st = p.status || (others.every((o) => lebihBaik(bks, o)) ? "aman" : others.every((o) => !lebihBaik(bks, o)) ? "kritis" : "waspada");
+    const kata = { aman: "Bekasi lebih baik dari semua pembanding", kritis: "Bekasi lebih buruk dari semua pembanding", waspada: "Bekasi di antara pembanding" }[st];
+    const ket = p.catatan || kata;
+    return `<article class="panel">
+      <h3>${p.judul}</h3>
+      <p class="dir">${p.arah === "rendah" ? "Makin rendah makin baik" : "Makin tinggi makin baik"}</p>
+      ${p.data.map((d, i) => `<div class="brow${i === 0 ? " me" : ""}">
+          <div class="lbl">${d.wilayah}<small>${d.tahun}</small></div>
+          <div class="track"><div class="fill" style="width:${(d.nilai / max) * 78}%;background:${COL[d.wilayah]}"></div><span class="v">${num(d.nilai, p.satuan)}</span></div>
+        </div>`).join("")}
+      <p class="verdict">${badge(st)}<span class="muted">${ket}</span></p>
+    </article>`;
+  }).join("");
+
+  const tr = h.tpt, ty = [2020, 2021, 2022, 2023, 2024, 2025];
+  const tb = ty.map((y) => tr.bekasi_resmi[y]), tn = ty.map((y) => tr.nasional_resmi[y]);
+  new Chart(id("chartTren"), {
+    type: "line",
+    data: { labels: ty, datasets: [
+      { label: "Kab. Bekasi", data: tb, borderColor: COL["Kab. Bekasi"], backgroundColor: COL["Kab. Bekasi"], borderWidth: 2, pointRadius: 4, tension: 0 },
+      { label: "Nasional", data: tn, borderColor: COL["Nasional"], backgroundColor: COL["Nasional"], borderWidth: 2, pointRadius: 4, tension: 0 },
+    ] },
+    options: (() => { const o = baseOptions("TPT (%)"); o.scales.y.min = 0; return o; })(),
+  });
+  id("trenNote").textContent = `Jarak Bekasi dengan nasional melebar: ${fmt(tb[1] / tn[1], 2)}× pada 2021 menjadi ${fmt(tb[5] / tn[5], 2)}× pada 2025.`;
+  id("tabTren").innerHTML = table(["Tahun", "Kab. Bekasi", "Nasional", "Selisih (poin)"], ty.map((y, i) => [y, fmt(tb[i]) + "%", fmt(tn[i]) + "%", fmt(tb[i] - tn[i])]));
+
   const t = h.tpt;
   const c = h.umkm_cakupan;
 

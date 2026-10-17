@@ -212,6 +212,27 @@ def main():
          "program": []},
     ]
     hasil["fakta"] = fakta
+
+    # ---------- 6. Perbandingan Bekasi vs Jawa Barat vs Nasional (untuk grafik) ----------
+    def bar(w, r):
+        return {"wilayah": w, "nilai": r["nilai"], "tahun": r["tahun"]}
+
+    hasil["perbandingan"] = [
+        {"judul": "Pengangguran terbuka", "satuan": "%", "arah": "rendah",
+         "data": [bar("Kab. Bekasi", tpt_b), bar("Jawa Barat", tpt_j), bar("Nasional", tpt_n)]},
+        {"judul": "Penduduk miskin", "satuan": "%", "arah": "rendah",
+         "data": [bar("Kab. Bekasi", mis_b), bar("Jawa Barat", mis_j), bar("Nasional", mis_n)]},
+        {"judul": "Kontribusi UMKM terhadap ekonomi", "satuan": "%", "arah": "tinggi",
+         "data": [bar("Kab. Bekasi", umkm_b), bar("Nasional", umkm_n)]},
+        {"judul": "Pertumbuhan ekonomi", "satuan": "%", "arah": "tinggi",
+         "data": [bar("Kab. Bekasi", pe_b), bar("Nasional", pe_n)]},
+        {"judul": "Rasio Gini (ketimpangan)", "satuan": "", "arah": "rendah", "status": "waspada",
+         "catatan": "Sedikit lebih baik dari nasional, tetapi masih ketimpangan sedang (0,3–0,5)",
+         "data": [bar("Kab. Bekasi", gini_b), bar("Nasional", gini_n)]},
+        {"judul": "PDRB per kapita", "satuan": " jt", "arah": "tinggi",
+         "catatan": "Lebih tinggi dari nasional karena output pabrik, bukan pendapatan warga",
+         "data": [bar("Kab. Bekasi", kap_b), bar("Nasional", kap_n)]},
+    ]
     hasil["jabatan"] = [AWAL_JABATAN, AKHIR_JABATAN]
 
     (DATA / "hasil.json").write_text(json.dumps(hasil, ensure_ascii=False, indent=2), encoding="utf-8")

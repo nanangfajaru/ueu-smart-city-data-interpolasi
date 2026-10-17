@@ -27,8 +27,29 @@
     <div class="grid" id="kartu"></div>
   </section>
 
+  <section id="grafik">
+    <h2><span class="num">2</span> Grafik perbandingan</h2>
+    <p class="intro">Data fakta Kabupaten Bekasi dibandingkan dengan Jawa Barat dan nasional. Status di bawah tiap panel sama dengan status pada kartu fakta.</p>
+    <div class="legend-row big">
+      <span><i class="sq" style="background:var(--s1)"></i>Kab. Bekasi</span>
+      <span><i class="sq" style="background:var(--s3)"></i>Jawa Barat</span>
+      <span><i class="sq" style="background:var(--s2)"></i>Nasional</span>
+    </div>
+    <div class="bars" id="bars"></div>
+    <figure class="chart-card wide">
+      <figcaption>Tren pengangguran terbuka 2020–2025 (%): Kab. Bekasi vs Nasional</figcaption>
+      <div class="legend-row">
+        <span><i class="sw" style="border-color:var(--s1)"></i>Kab. Bekasi</span>
+        <span><i class="sw" style="border-color:var(--s2)"></i>Nasional</span>
+      </div>
+      <div class="canvas-box"><canvas id="chartTren" aria-label="Grafik tren pengangguran Bekasi dan nasional 2020 sampai 2025"></canvas></div>
+      <p class="muted small" id="trenNote"></p>
+      <details><summary>Lihat tabel</summary><div id="tabTren"></div></details>
+    </figure>
+  </section>
+
   <section id="kebijakan">
-    <h2><span class="num">2</span> Rekomendasi kebijakan</h2>
+    <h2><span class="num">3</span> Rekomendasi kebijakan</h2>
     <p class="intro">Tiga status kritis dijawab oleh dua program yang saling terhubung: UMKM dibina dan didata di Program 1, lalu menjual ke pabrik dan masyarakat di Program 2.</p>
     <div class="programs">
       <article class="prog p1">
@@ -71,6 +92,7 @@
 </main>
 <footer class="wrap foot">Super Economy Bekasi · Kabupaten Bekasi · Tugas Smart City</footer>
 
+<script src="assets/vendor/chart.umd.min.js"></script>
 <script src="assets/app.js"></script>
 </body>
 </html>

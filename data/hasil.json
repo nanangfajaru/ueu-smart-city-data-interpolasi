@@ -353,6 +353,123 @@
       "program": []
     }
   ],
+  "perbandingan": [
+    {
+      "judul": "Pengangguran terbuka",
+      "satuan": "%",
+      "arah": "rendah",
+      "data": [
+        {
+          "wilayah": "Kab. Bekasi",
+          "nilai": 8.78,
+          "tahun": 2025
+        },
+        {
+          "wilayah": "Jawa Barat",
+          "nilai": 6.77,
+          "tahun": 2025
+        },
+        {
+          "wilayah": "Nasional",
+          "nilai": 4.85,
+          "tahun": 2025
+        }
+      ]
+    },
+    {
+      "judul": "Penduduk miskin",
+      "satuan": "%",
+      "arah": "rendah",
+      "data": [
+        {
+          "wilayah": "Kab. Bekasi",
+          "nilai": 4.36,
+          "tahun": 2025
+        },
+        {
+          "wilayah": "Jawa Barat",
+          "nilai": 7.02,
+          "tahun": 2025
+        },
+        {
+          "wilayah": "Nasional",
+          "nilai": 8.47,
+          "tahun": 2025
+        }
+      ]
+    },
+    {
+      "judul": "Kontribusi UMKM terhadap ekonomi",
+      "satuan": "%",
+      "arah": "tinggi",
+      "data": [
+        {
+          "wilayah": "Kab. Bekasi",
+          "nilai": 13.77,
+          "tahun": 2020
+        },
+        {
+          "wilayah": "Nasional",
+          "nilai": 61.0,
+          "tahun": 2024
+        }
+      ]
+    },
+    {
+      "judul": "Pertumbuhan ekonomi",
+      "satuan": "%",
+      "arah": "tinggi",
+      "data": [
+        {
+          "wilayah": "Kab. Bekasi",
+          "nilai": 5.17,
+          "tahun": 2024
+        },
+        {
+          "wilayah": "Nasional",
+          "nilai": 5.03,
+          "tahun": 2024
+        }
+      ]
+    },
+    {
+      "judul": "Rasio Gini (ketimpangan)",
+      "satuan": "",
+      "arah": "rendah",
+      "status": "waspada",
+      "catatan": "Sedikit lebih baik dari nasional, tetapi masih ketimpangan sedang (0,3–0,5)",
+      "data": [
+        {
+          "wilayah": "Kab. Bekasi",
+          "nilai": 0.367,
+          "tahun": 2024
+        },
+        {
+          "wilayah": "Nasional",
+          "nilai": 0.375,
+          "tahun": 2025
+        }
+      ]
+    },
+    {
+      "judul": "PDRB per kapita",
+      "satuan": " jt",
+      "arah": "tinggi",
+      "catatan": "Lebih tinggi dari nasional karena output pabrik, bukan pendapatan warga",
+      "data": [
+        {
+          "wilayah": "Kab. Bekasi",
+          "nilai": 128.69,
+          "tahun": 2024
+        },
+        {
+          "wilayah": "Nasional",
+          "nilai": 78.62,
+          "tahun": 2024
+        }
+      ]
+    }
+  ],
   "jabatan": [
     2029,
     2034

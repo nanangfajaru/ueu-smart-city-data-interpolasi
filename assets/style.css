@@ -127,3 +127,19 @@ tr.group td { background: #f1f5f3; font-weight: 700; color: var(--ink-2); text-a
 
 .table-wrap td .nd { color: var(--muted); font-size: 12px; font-style: italic; }
 .table-wrap th:nth-child(3), .table-wrap td:nth-child(3) { background: rgba(224, 165, 38, 0.10); }
+
+/* comparison bars */
+.legend-row.big { font-size: 14px; margin-bottom: 14px; }
+.sq { width: 12px; height: 12px; border-radius: 3px; display: inline-block; }
+.bars { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 14px; margin-bottom: 18px; }
+.panel { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 16px; }
+.panel h3 { font-family: Inter, sans-serif; font-size: 15px; font-weight: 600; margin-bottom: 2px; }
+.panel .dir { font-size: 12px; color: var(--muted); margin: 0 0 12px; }
+.brow { display: grid; grid-template-columns: 96px 1fr; align-items: center; gap: 10px; margin: 8px 0; }
+.brow .lbl { font-size: 13px; color: var(--ink-2); line-height: 1.2; }
+.brow .lbl small { display: block; color: var(--muted); font-size: 11px; }
+.brow.me .lbl { color: var(--ink); font-weight: 600; }
+.track { position: relative; height: 22px; display: flex; align-items: center; gap: 8px; }
+.fill { height: 18px; border-radius: 0 4px 4px 0; min-width: 2px; }
+.track .v { font-size: 13px; font-weight: 600; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.verdict { margin: 12px 0 0; font-size: 13px; padding-top: 10px; border-top: 1px solid var(--line); display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
