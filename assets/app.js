@@ -79,22 +79,24 @@ async function main() {
   const mitra = [100, 300, 600, 900, 1200], b2b = [50, 150, 350, 600, 1000], b2c = [10, 30, 60, 100, 150];
   const desa = [5, 12, 22, 35, 50], kerja = [5000, 15000, 30000, 45000, 60000];
   const rp = (m) => (m >= 1000 ? "Rp1 T" : `Rp${m} M`);
+  const nd = `<span class="nd">belum ada data</span>`;
+  const nol = (why) => cell("0", why);
   const rows = [
     { group: "Program 1 · Super UMKM" },
-    ["UMKM terdaftar", "% dari potensi ±761 rb usaha", ...reg.map((x) => cell(ribu(x), pct(x, c.estimasi)))],
-    ["Legalitas (NIB/izin)", "% dari UMKM terdaftar", ...leg.map((x, i) => cell(ribu(x), pct(x, reg[i])))],
-    ["Pengguna QRIS", "% dari UMKM terdaftar", ...qris.map((q, i) => cell(ribu(reg[i] * q), Math.round(q * 100) + "%"))],
-    ["Penerima KUR", "% dari UMKM terdaftar", ...kur.map((x, i) => cell(ribu(x), pct(x, reg[i])))],
+    ["UMKM terdaftar", "% dari potensi ±761 rb usaha", cell(ribu(c.tercatat), fmt(c.persen_tercatat, 1) + "% · 2023"), ...reg.map((x) => cell(ribu(x), pct(x, c.estimasi)))],
+    ["Legalitas (NIB/izin)", "% dari UMKM terdaftar", nd, ...leg.map((x, i) => cell(ribu(x), pct(x, reg[i])))],
+    ["Pengguna QRIS", "% dari UMKM terdaftar", nd, ...qris.map((q, i) => cell(ribu(reg[i] * q), Math.round(q * 100) + "%"))],
+    ["Penerima KUR", "% dari UMKM terdaftar", nd, ...kur.map((x, i) => cell(ribu(x), pct(x, reg[i])))],
     { group: "Program 2 · Pasar UMKM" },
-    ["Perusahaan mitra B2B", "% dari ±2.553 perusahaan kawasan", ...mitra.map((x) => cell(ribu(x), pct(x, 2553)))],
-    ["Pendapatan B2B / tahun", "% dari target 2034", ...b2b.map((x) => cell(rp(x), pct(x, 1000)))],
-    ["Pendapatan B2C / tahun", "% dari target 2034", ...b2c.map((x) => cell(rp(x), pct(x, 150)))],
-    ["Desa UMKM Digital", "% dari 187 desa/kelurahan", ...desa.map((x) => cell(x, pct(x, 187)))],
+    ["Perusahaan mitra B2B", "% dari ±2.553 perusahaan kawasan", nol("program baru"), ...mitra.map((x) => cell(ribu(x), pct(x, 2553)))],
+    ["Pendapatan B2B / tahun", "% dari target 2034", nol("program baru"), ...b2b.map((x) => cell(rp(x), pct(x, 1000)))],
+    ["Pendapatan B2C / tahun", "% dari target 2034", nol("program baru"), ...b2c.map((x) => cell(rp(x), pct(x, 150)))],
+    ["Desa UMKM Digital", "% dari 187 desa/kelurahan", nol("program baru"), ...desa.map((x) => cell(x, pct(x, 187)))],
     { group: "Dampak" },
-    ["Lapangan kerja baru", `% dari ${ribu(t.penganggur_2025)} penganggur (2025)`, ...kerja.map((x) => cell(ribu(x), pct(x, t.penganggur_2025)))],
-    ["Pengangguran terbuka", "tanpa kebijakan →", ...yr.map((y) => cell(fmt(t.bekasi_target[y]) + "%", fmt(t.bekasi_tanpa_kebijakan[y]) + "%"))],
+    ["Lapangan kerja baru", `% dari ${ribu(t.penganggur_2025)} penganggur (2025)`, cell(ribu(t.penganggur_2025), "penganggur · 2025"), ...kerja.map((x) => cell(ribu(x), pct(x, t.penganggur_2025)))],
+    ["Pengangguran terbuka", "tanpa kebijakan →", cell(fmt(t.bekasi_resmi[2025]) + "%", "2025"), ...yr.map((y) => cell(fmt(t.bekasi_target[y]) + "%", fmt(t.bekasi_tanpa_kebijakan[y]) + "%"))],
   ];
-  id("tabTarget").innerHTML = table(["Indikator", "Dasar persentase", ...yr], rows);
+  id("tabTarget").innerHTML = table(["Indikator", "Dasar persentase", "Data awal", ...yr], rows);
 
   // ---------- Sumber ----------
   const seen = new Map();

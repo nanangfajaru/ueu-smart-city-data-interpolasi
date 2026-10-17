@@ -138,3 +138,6 @@ tr.group td { background: var(--page); font-weight: 700; color: var(--ink-2); te
   .hero { padding: 40px 0 32px; }
   .canvas-box.tall { height: 300px; }
 }
+
+.table-wrap td .nd { color: var(--muted); font-size: 12px; font-style: italic; }
+.table-wrap th:nth-child(3), .table-wrap td:nth-child(3) { background: rgba(224, 165, 38, 0.10); }
