@@ -2,6 +2,8 @@
 
 Tugas mata kuliah Smart City. Gagasan Bupati Kabupaten Bekasi periode 2029–2034 di bidang **Smart Economy** untuk UMKM.
 
+**Web:** https://super-economy-bekasi.vercel.app
+
 Halaman web ini menyajikan:
 
 1. **Fakta resmi & status**: angka dari BPS, Pemkab Bekasi, dan pemerintah pusat, lengkap dengan sumbernya. Tiap angka dibandingkan dengan Jawa Barat dan nasional, lalu diberi status *Kritis*, *Waspada*, atau *Aman*.
