@@ -15,54 +15,20 @@
   <div class="wrap">
     <p class="kicker">Tugas Smart City · Smart Economy · Gagasan Bupati Kabupaten Bekasi 2029–2034</p>
     <h1>SUPER ECONOMY BEKASI</h1>
-    <p class="lead">Platform analisis UMKM Kabupaten Bekasi: data resmi BPS dan Pemkab, status setiap indikator, interpolasi dan proyeksi, sampai rekomendasi kebijakan.</p>
+    <p class="lead">Platform analisis UMKM Kabupaten Bekasi: data resmi BPS dan Pemkab, status setiap indikator, sampai rekomendasi kebijakan.</p>
   </div>
 </header>
 
 <main class="wrap">
   <section id="fakta">
-    <h2><span class="num">1–2</span> Fakta resmi &amp; status</h2>
+    <h2><span class="num">1</span> Fakta resmi &amp; status</h2>
     <p class="intro">Setiap angka dibandingkan dengan Jawa Barat dan/atau nasional. <b>Kritis</b> = lebih buruk dari semua pembanding, <b>Waspada</b> = di antara atau melemah, <b>Aman</b> = lebih baik dari semua pembanding.</p>
     <div class="tally" id="tally"></div>
     <div class="grid" id="kartu"></div>
   </section>
 
-  <section id="interpolasi">
-    <h2><span class="num">3</span> Interpolasi: mengisi data yang kosong</h2>
-    <div class="two">
-      <div>
-        <p>Kontribusi UMKM terhadap PDRB Bekasi hanya tercatat pada <b>2016</b> dan <b>2020</b>. Tahun 2017–2019 diisi dengan <b>interpolasi linear</b>:</p>
-        <div class="formula">y(t) = y<sub>0</sub> + (y<sub>1</sub> − y<sub>0</sub>) × (t − t<sub>0</sub>) / (t<sub>1</sub> − t<sub>0</sub>)</div>
-        <p class="worked" id="worked"></p>
-        <p class="muted">Garis yang diteruskan setelah 2020 disebut <b>ekstrapolasi/proyeksi</b>: perkiraan kalau tren lama berlanjut. Karena hanya dua titik, proyeksi ini paling lemah dan disebut "perkiraan".</p>
-      </div>
-      <figure class="chart-card">
-        <figcaption>Kontribusi UMKM terhadap PDRB Kab. Bekasi (%)</figcaption>
-        <div class="legend-row">
-          <span><i class="dot solid"></i>Data resmi</span>
-          <span><i class="dot hollow"></i>Hasil interpolasi</span>
-          <span><i class="dash"></i>Proyeksi</span>
-        </div>
-        <div class="canvas-box"><canvas id="chartUmkm" aria-label="Grafik kontribusi UMKM terhadap PDRB"></canvas></div>
-        <details><summary>Lihat tabel</summary><div id="tabUmkm"></div></details>
-      </figure>
-    </div>
-  </section>
-
-  <section id="proyeksi">
-    <h2><span class="num">4</span> Proyeksi tanpa kebijakan &amp; kesenjangan</h2>
-    <p class="intro">Pengangguran diproyeksikan dengan <b>laju perubahan tahunan 2023–2025</b>: y(t) = y<sub>2025</sub> × (1 + r)<sup>t − 2025</sup>. Target kebijakan: mulai 2030, Bekasi turun <b>secepat laju nasional</b>.</p>
-    <figure class="chart-card wide">
-      <figcaption>Tingkat pengangguran terbuka (%) — 2020–2025 data BPS, 2026–2034 proyeksi</figcaption>
-      <div class="legend-row" id="legendTpt"></div>
-      <div class="canvas-box tall"><canvas id="chartTpt" aria-label="Grafik pengangguran Bekasi dan nasional"></canvas></div>
-      <details><summary>Lihat tabel</summary><div id="tabTpt"></div></details>
-    </figure>
-    <div class="stats" id="stats"></div>
-  </section>
-
   <section id="kebijakan">
-    <h2><span class="num">5</span> Rekomendasi kebijakan</h2>
+    <h2><span class="num">2</span> Rekomendasi kebijakan</h2>
     <p class="intro">Tiga status kritis dijawab oleh dua program yang saling terhubung: UMKM dibina dan didata di Program 1, lalu menjual ke pabrik dan masyarakat di Program 2.</p>
     <div class="programs">
       <article class="prog p1">
@@ -94,7 +60,7 @@
 
     <h3 class="h3">Target per tahun (persentase terhadap dasar pembanding)</h3>
     <div class="table-wrap" id="tabTarget"></div>
-    <p class="muted small">Angka kumulatif kecuali pendapatan per tahun. M = miliar, T = triliun. Target pengangguran mengikuti skenario "kejar laju nasional" pada grafik di atas.</p>
+    <p class="muted small">Angka kumulatif kecuali pendapatan per tahun. M = miliar, T = triliun. Target pengangguran: Bekasi turun secepat laju nasional mulai 2030 (angka kecil = kondisi jika tanpa kebijakan).</p>
   </section>
 
   <section id="sumber">
@@ -105,7 +71,6 @@
 </main>
 <footer class="wrap foot">Super Economy Bekasi · Kabupaten Bekasi · Tugas Smart City</footer>
 
-<script src="assets/vendor/chart.umd.min.js"></script>
 <script src="assets/app.js"></script>
 </body>
 </html>

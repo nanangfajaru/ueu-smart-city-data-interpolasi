@@ -1,14 +1,11 @@
-# Smart Economy UMKM Kabupaten Bekasi: dari data ke kebijakan
+# Super Economy Bekasi
 
 Tugas mata kuliah Smart City. Gagasan Bupati Kabupaten Bekasi periode 2029–2034 di bidang **Smart Economy** untuk UMKM.
 
-Halaman web ini menyajikan alur analisis:
+Halaman web ini menyajikan:
 
-1. **Fakta resmi**: angka dari BPS, Pemkab Bekasi, dan pemerintah pusat, lengkap dengan sumbernya.
-2. **Status**: tiap angka dibandingkan dengan Jawa Barat dan nasional, lalu diberi status *Kritis*, *Waspada*, atau *Aman*.
-3. **Interpolasi**: tahun yang tidak punya data diisi dengan interpolasi linear.
-4. **Proyeksi & kesenjangan**: tren dilanjutkan sampai 2034 ("tanpa kebijakan"), lalu dibandingkan dengan target.
-5. **Rekomendasi kebijakan**: dua program untuk menutup kesenjangan:
+1. **Fakta resmi & status**: angka dari BPS, Pemkab Bekasi, dan pemerintah pusat, lengkap dengan sumbernya. Tiap angka dibandingkan dengan Jawa Barat dan nasional, lalu diberi status *Kritis*, *Waspada*, atau *Aman*.
+2. **Rekomendasi kebijakan**: dua program untuk memperbaiki indikator yang kritis, dengan target per tahun 2030–2034:
    - **Super UMKM Bekasi**: portal profil, legalitas, pelatihan, kredit digital, dan monitoring status UMKM.
    - **Pasar UMKM Bekasi**: marketplace B2B (dengan Peraturan Bupati kemitraan industri–UMKM) dan B2C.
 
@@ -21,7 +18,9 @@ Halaman web ini menyajikan alur analisis:
 | `data/hasil.json` | Hasil perhitungan (dibaca oleh halaman web) |
 | `index.html`, `assets/` | Halaman presentasi |
 
-## Metode
+## Metode (di skrip)
+
+Perhitungan interpolasi dan proyeksi tetap ada di `scripts/interpolasi.py` sebagai dasar angka target.
 
 **Interpolasi linear** (mengisi tahun di antara dua data resmi):
 

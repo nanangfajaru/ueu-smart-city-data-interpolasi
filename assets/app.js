@@ -67,69 +67,8 @@ async function main() {
       <div class="src">Sumber: <a href="${f.sumber.url}" target="_blank" rel="noopener">${f.sumber.nama}</a></div>
     </article>`).join("");
 
-  // ---------- 3. Interpolasi ----------
-  const u = h.umkm_pdrb;
-  const [t0, y0, t1, y1] = u.titik;
-  const y2017 = u.seri.find((s) => s.tahun === 2017).nilai;
-  id("worked").innerHTML = `Contoh 2017: y = ${fmt(y0)} + (${fmt(y1)} − ${fmt(y0)}) × (2017 − ${t0}) / (${t1} − ${t0}) = ${fmt(y0)} + ${fmt(u.kemiringan, 3)} = <b>${fmt(y2017)}%</b>.<br>Artinya kontribusi UMKM naik sekitar <b>${fmt(u.kemiringan, 2)} poin per tahun</b>. Dengan laju itu, tahun 2034 baru sekitar <b>${fmt(u.seri.at(-1).nilai, 1)}%</b>, masih jauh dari angka nasional ${u.nasional}%.`;
-
-  const s1 = css("--s1"), surface = css("--surface");
-  const labelsU = u.seri.map((s) => s.tahun);
-  const lastResmi = labelsU.indexOf(t1);
-  new Chart(id("chartUmkm"), {
-    type: "line",
-    data: {
-      labels: labelsU,
-      datasets: [{
-        label: "Kontribusi UMKM", data: u.seri.map((s) => s.nilai), borderColor: s1, borderWidth: 2, tension: 0,
-        pointRadius: u.seri.map((s) => (s.jenis === "proyeksi" ? 0 : 5)), pointHoverRadius: 6,
-        pointBackgroundColor: u.seri.map((s) => (s.jenis === "resmi" ? s1 : surface)), pointBorderColor: s1, pointBorderWidth: 2,
-        segment: { borderDash: (c) => (c.p0DataIndex >= lastResmi ? [6, 4] : undefined) },
-      }],
-    },
-    options: (() => {
-      const o = baseOptions("% PDRB");
-      o.plugins.tooltip.callbacks.label = (c) => ` ${fmt(c.raw)}% (${u.seri[c.dataIndex].jenis})`;
-      return o;
-    })(),
-  });
-  id("tabUmkm").innerHTML = table(["Tahun", "Nilai (%)", "Jenis"], u.seri.map((s) => [s.tahun, fmt(s.nilai), s.jenis]));
-
-  // ---------- 4. Proyeksi TPT ----------
   const t = h.tpt;
-  const yrs = t.tahun;
-  const pick = (...objs) => yrs.map((y) => { for (const o of objs) if (o[y] !== undefined) return o[y]; return null; });
-  const bks = pick(t.bekasi_resmi, t.bekasi_tanpa_kebijakan);
-  const nas = pick(t.nasional_resmi, t.nasional_proyeksi);
-  const tgt = pick(t.bekasi_target);
-  const i25 = yrs.indexOf(2025);
-  const s2 = css("--s2"), s3 = css("--s3");
-  const dashAfter = (c) => (c.p0DataIndex >= i25 ? [6, 4] : undefined);
-  id("legendTpt").innerHTML = `
-    <span><i class="sw" style="border-color:${s1}"></i>Bekasi (putus-putus = tanpa kebijakan)</span>
-    <span><i class="sw" style="border-color:${s3}"></i>Bekasi dengan kebijakan</span>
-    <span><i class="sw" style="border-color:${s2}"></i>Nasional (putus-putus = proyeksi)</span>`;
-  new Chart(id("chartTpt"), {
-    type: "line",
-    data: {
-      labels: yrs,
-      datasets: [
-        { label: "Bekasi", data: bks, borderColor: s1, backgroundColor: s1, borderWidth: 2, pointRadius: yrs.map((y, i) => (i <= i25 ? 3 : 0)), segment: { borderDash: dashAfter } },
-        { label: "Bekasi dengan kebijakan", data: tgt, borderColor: s3, backgroundColor: s3, borderWidth: 2, pointRadius: 3 },
-        { label: "Nasional", data: nas, borderColor: s2, backgroundColor: s2, borderWidth: 2, pointRadius: yrs.map((y, i) => (i <= i25 ? 3 : 0)), segment: { borderDash: dashAfter } },
-      ],
-    },
-    options: (() => { const o = baseOptions("TPT (%)"); o.scales.y.min = 0; return o; })(),
-  });
-  id("tabTpt").innerHTML = table(["Tahun", "Bekasi", "Bekasi + kebijakan", "Nasional", "Keterangan"],
-    yrs.map((y, i) => [y, fmt(bks[i]), tgt[i] == null ? "–" : fmt(tgt[i]), fmt(nas[i]), i <= i25 ? "data resmi" : "proyeksi"]));
-
   const c = h.umkm_cakupan;
-  id("stats").innerHTML = `
-    <div class="stat"><div class="k">Pengangguran 2034 tanpa kebijakan</div><div class="v">${fmt(t.bekasi_tanpa_kebijakan[2034])}%</div><div class="d">${fmt(t.rasio_2034_tanpa, 1)}× nasional (sekarang ${fmt(t.rasio_2025, 1)}×)</div></div>
-    <div class="stat"><div class="k">Pengangguran 2034 dengan kebijakan</div><div class="v">${fmt(t.bekasi_target[2034])}%</div><div class="d">turun ${fmt(Math.abs(t.laju_nasional))}%/tahun seperti nasional</div></div>
-    <div class="stat hl"><div class="k">Kesenjangan yang harus ditutup</div><div class="v">±${ribu(t.gap_orang)} orang</div><div class="d">${ribu(t.penganggur_2034_tanpa)} → ${ribu(t.penganggur_2034_target)} penganggur (angkatan kerja ±${fmt(t.angkatan_kerja_2034 / 1e6, 2)} juta)</div></div>
-    <div class="stat"><div class="k">Cakupan data UMKM</div><div class="v">${fmt(c.persen_tercatat, 1)}% → ${fmt(c.persen_target_2034, 1)}%</div><div class="d">${ribu(c.tercatat)} tercatat dari estimasi ±${ribu(c.estimasi)} usaha (proporsi penduduk ${fmt(c.proporsi_penduduk)}% × UMKM nasional)</div></div>`;
 
   // ---------- 5. Target ----------
   const yr = [2030, 2031, 2032, 2033, 2034];
